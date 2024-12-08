@@ -25,7 +25,7 @@ cd discord-bot
 npm install
 ```
 
-3. Create a `.env` file and add your Discord bot token:
+3. Create a `.env` file and add your Discord bot token. Alternatively, you can set these variables as environment variables if you are using Docker:
 
 ```bash
 BOT_TOKEN=<your-bot-token>
@@ -53,11 +53,13 @@ npm run start-dev
 
 ## Project Structure
 
-- `src/index.js`: Main bot file
-- `src/utils/logger.js`: Logging utility using Winston
-- `package.json`: Project dependencies and scripts
-- `.env`: Environment variables
-- `README.md`: This file
+src
+├── index.js         # Main bot file
+└── utils
+    └── logger.js    # Logging utility using Winston
+package.json          # Project dependencies and scripts
+.env                  # Environment variables
+README.md             # This file
 
 ## License
 
