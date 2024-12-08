@@ -39,16 +39,20 @@ for (const folder of commandFolders) {
 const rest = new REST().setToken(BOT_TOKEN);
 
 // Deploy all commands!
-(async () => {
+(() => {
     try {
         logger.info(`Started refreshing ${commands.length} application commands.`);
 
-        await rest.put(
+        // Added scope of deploying commands
+        logger.info(GUILD_ID ? `Guild ID: ${GUILD_ID}` : 'Global');
+
+        rest.put(
             GUILD_ID ? Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID) : Routes.applicationCommands(CLIENT_ID),
             { body: commands },
-        );
+        )
+        .then(() => logger.info(`Successfully reloaded ${commands.length} application commands.`))
+        .catch(logger.error);
 
-        logger.info(`Successfully reloaded ${commands.length} application commands.`);
     } catch (error) {
         logger.error(error);
     }

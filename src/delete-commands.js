@@ -43,14 +43,16 @@ const rest = new REST().setToken(BOT_TOKEN);
     try {
         logger.info(`Started refreshing ${commands.length} application commands.`);
 
+        // Added scope of removing commands
+        logger.info(GUILD_ID ? `Guild ID: ${GUILD_ID}` : 'Global');
+
         rest.put(
             GUILD_ID ? Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID) : Routes.applicationCommands(CLIENT_ID),
             { body: [] },
         )
-        .then(() => logger.info('Successfully deleted application commands.'))
+        .then(() => logger.info(`Successfully deleted ${commands.length} application commands.`))
         .catch(logger.error);
 
-        logger.info(`Successfully deleted ${commands.length} application commands.`);
     } catch (error) {
         logger.error(error);
     }
