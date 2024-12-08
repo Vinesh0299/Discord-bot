@@ -53,13 +53,11 @@ npm run start-dev
 
 ## Project Structure
 
-src  
-├── index.js         # Main bot file  
-└── utils  
-    └── logger.js    # Logging utility using Winston  
-package.json          # Project dependencies and scripts  
-.env                  # Environment variables  
-README.md             # This file  
+- `src/index.js`: Main bot file
+- `src/utils/logger.js`: Logging utility using Winston
+- `package.json`: Project dependencies and scripts
+- `.env`: Environment variables
+- `README.md`: This file
 
 ## License
 
