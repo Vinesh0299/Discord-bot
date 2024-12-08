@@ -1,0 +1,22 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Simple bot to do random stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinesh0299/Discord-bot.git"
+  },
+  "author": "Vinesh Katewa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vinesh0299/Discord-bot/issues"
+  },
+  "homepage": "https://github.com/Vinesh0299/Discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  }
+}
