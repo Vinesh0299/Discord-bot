@@ -5,7 +5,7 @@ const { Client, Events, GatewayIntentBits } = require('discord.js');
 const logger = require('./utils/logger');
 
 // Get the environment variables
-const { BOT_TOKEN, CLIENT_ID } = process.env;
+const { BOT_TOKEN } = process.env;
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });

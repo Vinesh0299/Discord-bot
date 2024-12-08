@@ -7,7 +7,9 @@ const logger = winston.createLogger({
     format: winston.format.combine(
         winston.format.timestamp({ format: 'YYYY-MM-DD hh:mm:ss.SSS A' }),
         winston.format.align(),
-        winston.format.printf((info) => `[${info.timestamp}] ${info.level.toUpperCase()}: ${info.message}`)
+        winston.format.printf(
+            (info) => `[${info.timestamp}] ${info.level.toUpperCase()}: ${info.message}`
+        )
     ),
     transports: [
         new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
